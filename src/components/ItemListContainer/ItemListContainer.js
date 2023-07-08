@@ -1,10 +1,15 @@
 import './ItemListContainer.css';
+import CartWidget from '../CartWidget/CartWidget'
+
 
 const ItemListContainer = (props) => {
     return (
-      <nav className="items">
+      <main>
+        <div class="divIndex"> 
+        <CartWidget totalNumber={0} />
         <h1>{props.greeting} </h1>
-      </nav>
+      </div>
+      </main>
     );
   };
   
