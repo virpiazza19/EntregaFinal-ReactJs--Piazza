@@ -1,3 +1,17 @@
 .cartDiv{
     background-color: firebrick;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    width:50px;
+    height: fit-content;
+    margin: auto;
+    border-radius: 5px;
+}
+
+FontAwesomeIcon{
+    margin: 5px;
+}
+span{
+    margin: 5px;
 }
