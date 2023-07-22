@@ -117,7 +117,7 @@ export const getProducts = () => {
 export function getProductById(itemId) {
     return new Promise((resolve, reject) => {
       const productRequested = products.find(
-        (item) => item.id === itemId
+        (item) => item.id.toLowerCase() === itemId.toLowerCase()
       );
   
       setTimeout(() => {
