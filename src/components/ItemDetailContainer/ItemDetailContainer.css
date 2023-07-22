@@ -1,7 +1,16 @@
 .ItemDetailContainer{
     display: inline-block;
     margin-top: 120px;
-    margin-bottom: 100px;
-    width: 80%;
-    height: 100vw;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.ItemDetailDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 80vw;
+    height: 60%;
+    margin-right: auto;
+    margin-left: auto;
 }

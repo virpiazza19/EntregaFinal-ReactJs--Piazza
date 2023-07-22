@@ -41,7 +41,8 @@
 .CardItemDetails {
     background-color: rgb(220, 152, 152);
     border: 2px solid black;
-    margin: 10% 10% 20% 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 5%;
     max-width: 70%;
     align-items: center;

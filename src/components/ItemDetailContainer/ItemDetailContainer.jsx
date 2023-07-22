@@ -20,9 +20,10 @@ const ItemDetailContainer = ({ greeting }) => {
             })
     }, [itemId])
 
-    return (<div className='ItemDetailContainer'>
+    return (
+    <div className='ItemDetailContainer'>
         <h1 className="h1Titulo">{greeting} </h1>
-        <ItemDetail {...product} />
+        <div className='ItemDetailDiv'><ItemDetail {...product} /></div>
     </div>)
 }
 
