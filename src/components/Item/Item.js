@@ -17,7 +17,7 @@ const Item = ({ id, name, price, image, stock }) => {
                 {!stock ? 'Sin Stock Disponible' : `Stock Disponible: ${stock}`}
                 </p>
             </section>
-            <Link to={`/item/${id}`} className='Option'>Ver Detalles</Link>
+            <Link to={`/item/${id}`} disabled={!stock} className='Option'>Ver Detalles</Link>
         </article>
     )
 }
