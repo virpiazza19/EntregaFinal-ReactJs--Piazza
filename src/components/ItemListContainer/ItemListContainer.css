@@ -1,7 +1,7 @@
 
   .divProductos {
     color: black;
-    margin-top: 120px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -11,14 +11,10 @@
   .h1Titulo {
     font-family: "Staatliches", cursive;
     text-align: center;
-    margin: 5px 10%;
+    margin: 0% 10%;
     font-size: 3.5rem;
     color: firebrick;
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     border-bottom: 2px solid black;
-    
-    &:hover {
-      font-size: 5rem;
-    }
   }
 

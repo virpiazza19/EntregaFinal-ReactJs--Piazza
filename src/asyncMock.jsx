@@ -109,7 +109,7 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
-        }, 500)
+        }, 2000)
     })
 }
 
@@ -122,7 +122,7 @@ export function getProductById(itemId) {
   
       setTimeout(() => {
         resolve(productRequested);
-      }, 500);
+      }, 2000);
     });
   }
 
@@ -134,6 +134,6 @@ export function getProductsByCategory(categoryId) {
   
       setTimeout(() => {
         resolve(categoryRequested);
-      }, 500);
+      }, 2000);
     });
   }

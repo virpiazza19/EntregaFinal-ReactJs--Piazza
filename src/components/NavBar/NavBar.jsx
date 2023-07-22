@@ -10,10 +10,11 @@ const NavBar = (props) => {
       <nav className="navbar bg-body-tertiary navbar-expand-lg fixed-top background-color navbar-dark bg-dark"
         data-bs-theme="dark">
         <div className="container-fluid">
+          <div>
           <Link to='/' className='tituloNavbar'><img data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="750" className="logo"
             src={logo} alt="Tu alfombra logo" /></Link>
            <Link to='/' className='tituloNavbar'><span className="tituloNavbar">Tu Alfombra</span></Link>
-
+           </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Menu">
             <span className="navbar-toggler-icon"></span>

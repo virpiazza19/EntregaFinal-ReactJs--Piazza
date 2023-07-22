@@ -7,9 +7,11 @@
     height: fit-content;
     margin: auto;
     border-radius: 5px;
+    padding: auto;
+    
 }
 
-FontAwesomeIcon{
+.FontAwesomeIcon{
     margin: 5px;
 }
 span{
