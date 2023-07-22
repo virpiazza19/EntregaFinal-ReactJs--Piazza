@@ -1,13 +1,5 @@
 @import "https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap";
 
-.Counter {
-    display: inline-block;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    flex-wrap: wrap;
-}
-
 .Controls {
     width: max-content;
     display: flex;
@@ -15,13 +7,14 @@
     justify-content: space-between;
     text-align: center;
     flex-wrap: wrap;
+    margin: auto;
 }
 
 .Number {
     width: 40px;
     height: 40px;
     padding: auto;
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .Button {
@@ -30,7 +23,7 @@
     border: 1px solid firebrick;
     margin: auto;
     background-color: firebrick;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     font-weight: 500;
     align-items: center;
@@ -60,6 +53,7 @@
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 20px;
+    font-size: 1rem;
 
     &:hover {
         background-color: firebrick;
@@ -75,4 +69,13 @@
         background-color: rgba(45, 43, 43, 0.9215686275);
         color: black;
     }
+}
+
+.Counter {
+    display: block;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }

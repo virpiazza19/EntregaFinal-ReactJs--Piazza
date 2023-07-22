@@ -4,12 +4,10 @@ import './ItemDetail.css'
 const ItemDetail = ({ id, name, price, image, category, stock }) => {
 
     return (
-        <article className='CardItemDetails'>
-            <header className='CardHeaderDetails'>
-                <h4>{name}</h4>
-            </header>
+        <div className='CardItemDetails'>
+                <h4 className='CardHeaderDetails'>{name}</h4>
             <img src={image} alt={name} className='fotosProductosDetails' />
-            <section className='SectionDetails'>
+            <div className='SectionDetails'>
                 <p className='InfoDetails'>
                     Precio: ${price}
                 </p>
@@ -19,9 +17,9 @@ const ItemDetail = ({ id, name, price, image, category, stock }) => {
                 <p className='InfoDetails'>
                 {!stock ? 'Sin Stock Disponible' : `Stock Disponible: ${stock}`}
                 </p>
-            </section>
+            </div>
             <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/>
-        </article>
+        </div>
     )
 }
 
