@@ -113,18 +113,29 @@ export const getProducts = () => {
     })
 }
 
-export const getProductById = (itemId) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products.find(prod => prod.id === itemId))
-        }, 500)
-    })
-}
 
-export const getProductsByCategory = (categoryId) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products.find(prod => prod.category === categoryId))
-        }, 500)
-    })
-}
+export function getProductById(itemId) {
+    return new Promise((resolve, reject) => {
+      const productRequested = products.find(
+        (item) => item.id === itemId
+      );
+  
+      setTimeout(() => {
+        resolve(productRequested);
+      }, 500);
+    });
+  }
+
+export function getProductsByCategory(categoryId) {
+    return new Promise((resolve, reject) => {
+      const categoryRequested = products.filter((item) => {
+        /* .... */
+        //return (item.category.toLowerCase() === categoryURL.toLowerCase())
+        return item.category.toLowerCase() === categoryId.toLowerCase();
+      });
+  
+      setTimeout(() => {
+        resolve(categoryRequested);
+      }, 500);
+    });
+  }

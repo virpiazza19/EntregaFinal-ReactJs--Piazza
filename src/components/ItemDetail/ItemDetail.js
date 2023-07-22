@@ -17,7 +17,7 @@ const ItemDetail = ({ id, name, price, image, category, stock }) => {
                     Categoria: {category}
                 </p>
                 <p className='InfoDetails'>
-                    Stock Disponible: {stock}
+                {!stock ? 'Sin Stock Disponible' : `Stock Disponible: ${stock}`}
                 </p>
             </section>
             <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log('Cantidad agregada', quantity)}/>

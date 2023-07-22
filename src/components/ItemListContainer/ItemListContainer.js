@@ -1,9 +1,7 @@
 import './ItemListContainer.css';
-import React,{ useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getProductsByCategory, getProducts } from '../../asyncMock'
 import ItemList from '../ItemList/ItemList'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({ greeting }) => {
@@ -11,10 +9,9 @@ const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([])
 
   const { categoryId } = useParams()
+  const asyncFunc = categoryId ? getProductsByCategory : getProducts
 
   useEffect(() => {
-
-    const asyncFunc = categoryId ? getProductsByCategory : getProducts
     asyncFunc(categoryId)
       .then(response => {
         setProducts(response)
@@ -22,13 +19,11 @@ const ItemListContainer = ({ greeting }) => {
       .catch(error => {
         console.error(error)
       })
-
-      AOS.init();
   }, [categoryId])
 
   return (
     <main>
-      <div className="divProductos" data-aos="zoom-in">
+      <div className="divProductos">
         <h1 className="h1Titulo">{greeting} </h1>
         <ItemList products={products} />
       </div>
