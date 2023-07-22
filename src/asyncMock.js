@@ -127,10 +127,8 @@ export function getProductById(itemId) {
   }
 
 export function getProductsByCategory(categoryId) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       const categoryRequested = products.filter((item) => {
-        /* .... */
-        //return (item.category.toLowerCase() === categoryURL.toLowerCase())
         return item.category.toLowerCase() === categoryId.toLowerCase();
       });
   
