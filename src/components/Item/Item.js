@@ -14,7 +14,7 @@ const Item = ({ id, name, price, image, stock }) => {
                     Precio: ${price}
                 </p>
                 <p className='Info'>
-                    Stock Disponible: {stock}
+                {!stock ? 'Sin Stock Disponible' : `Stock Disponible: ${stock}`}
                 </p>
             </section>
             <Link to={`/item/${id}`} className='Option'>Ver Detalles</Link>
