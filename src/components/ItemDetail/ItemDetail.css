@@ -13,7 +13,7 @@
 
 .fotosProductosDetails {
     margin-top: 20px;
-    width: 100%;
+    width: 80%;
     height: 55%;
     border: 1px solid rgb(246, 207, 207);
 }
@@ -40,7 +40,7 @@
     border-radius: 5px;
     margin: auto;
     padding: 30px 40px 0 40px;
-    height: 60%;
-    width: 80%;
+    height: 40%;
+    width: 70%;
     border-radius: 5%;
 }
