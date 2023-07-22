@@ -4,6 +4,7 @@ const products = [
         "name": "Alfombra Panaderos",
         "price": 100000,
         "stock": 10,
+        "category": "Jet",
         "image": "https://drive.google.com/uc?export=view&id=13FyA0CzHqxTTaGXUdhsh5o3RQPZe5_ED"
     },
     {
@@ -11,6 +12,7 @@ const products = [
         "name": "Alfombra K9",
         "price": 100000,
         "stock": 9,
+        "category": "Transito Medio",
         "image": "https://drive.google.com/uc?export=view&id=1g3spd-pdMXTKf1B6WQ5lw3vveNoP6a_2"
     },
     {
@@ -18,6 +20,7 @@ const products = [
         "name": "Alfombra Slices",
         "price": 100000,
         "stock": 15,
+        "category": "Transito Medio",
         "image": "https://drive.google.com/uc?export=view&id=1rWN3o_bcQD3fy3_0WO9pP-NEPZldchuX"
     },
     {
@@ -25,6 +28,7 @@ const products = [
         "name": "Alfombra Arcor",
         "price": 100000,
         "stock": 12,
+        "category": "Transito Alto",
         "image": "https://drive.google.com/uc?export=view&id=1P-JFzcAhVt0CPZSl3aeP5bCIJSDCxyFY"
     },
     {
@@ -32,6 +36,7 @@ const products = [
         "name": "Alfombra Caramelitos",
         "price": 100000,
         "stock": 6,
+        "category": "Transito Alto",
         "image": "https://drive.google.com/uc?export=view&id=18TIaJkK0bjfqF5zogMcoKpxFSJA5P4jl"
     },
     {
@@ -39,6 +44,7 @@ const products = [
         "name": "Alfombra Bajo El Mar",
         "price": 100000,
         "stock": 1,
+        "category": "Jet",
         "image": "https://drive.google.com/uc?export=view&id=1XoxonhjIMIOQJhHE8OnqXLTOd2Md6GoL"
     },
     {
@@ -46,6 +52,7 @@ const products = [
         "name": "Alfombra Yumi",
         "price": 100000,
         "stock": 30,
+        "category": "Transito Medio",
         "image": "https://drive.google.com/uc?export=view&id=1FFZXc9zQEuXSmlEzAXstjA7WedOCvwo3"
     },
     {
@@ -53,6 +60,7 @@ const products = [
         "name": "Alfombra Montagne",
         "price": 100000,
         "stock": 7,
+        "category": "Jet",
         "image": "https://drive.google.com/uc?export=view&id=1MfSq3kcjwVMckf8vY8RZfe5XbHji-4KG"
     },
     {
@@ -60,6 +68,7 @@ const products = [
         "name": "Alfombra Maxikioso Pablito",
         "price": 100000,
         "stock": 18,
+        "category": "Transito Alto",
         "image": "https://drive.google.com/uc?export=view&id=1QzncQYptYlswDeh3TpyT-Iam98iVA7i_"
     },
     {
@@ -67,6 +76,7 @@ const products = [
         "name": "Alfombra Harmatiuk",
         "price": 100000,
         "stock": 1,
+        "category": "Transito Alto",
         "image": "https://drive.google.com/uc?export=view&id=1PvBfuxV_nrzR7nvECLSVYdQrbSZ2-cJ7"
     },
     {
@@ -74,6 +84,7 @@ const products = [
         "name": "Alfombra Harley Davidson",
         "price": 100000,
         "stock": 0,
+        "category": "Transito Medio",
         "image": "https://drive.google.com/uc?export=view&id=1IDjN4cnC75TI_Yifxxvn1J6dHl9NyJw-"
     },
     {
@@ -81,6 +92,7 @@ const products = [
         "name": "Alfombra Dakros Maxikiosko",
         "price": 100000,
         "stock": 10,
+        "category": "Transito Alto",
         "image": "https://drive.google.com/uc?export=view&id=1wO8DWpI10QAR5dpMmE_DrPRuleZ3ICSq"
     },
     {
@@ -88,6 +100,7 @@ const products = [
         "name": "Alfombra Bigg",
         "price": 100000,
         "stock": 10,
+        "category": "Jet",
         "image": "https://drive.google.com/uc?export=view&id=1Qau7AnKmZxxX_zsieUlxJkWCRg-m5S6X"
     }
 ]
@@ -96,6 +109,22 @@ export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
+        }, 500)
+    })
+}
+
+export const getProductById = (itemId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === itemId))
+        }, 500)
+    })
+}
+
+export const getProductsByCategory = (categoryId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.category === categoryId))
         }, 500)
     })
 }

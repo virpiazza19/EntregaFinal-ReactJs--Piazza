@@ -2,41 +2,42 @@ import React from 'react';
 import './NavBar.css';
 import logo from './assets/logoPagina.png'
 import CartWidget from '../CartWidget/CartWidget'
+import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
   return (
     <header>
-      <nav class="navbar bg-body-tertiary navbar-expand-lg fixed-top background-color navbar-dark bg-dark"
+      <nav className="navbar bg-body-tertiary navbar-expand-lg fixed-top background-color navbar-dark bg-dark"
         data-bs-theme="dark">
-        <div class="container-fluid">
-          <img data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="750" class="logo"
+        <div className="container-fluid">
+          <img data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="750" className="logo"
             src={logo} alt="Tu alfombra logo" />
-          <span class="tituloNavbar">Tu Alfombra</span>
+          <span className="tituloNavbar">Tu Alfombra</span>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Menu">
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+          <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <span class="offcanvas-title" id="offcanvasNavbarLabel">Tu Alformbra</span>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div className="offcanvas-header">
+              <span className="offcanvas-title" id="offcanvasNavbarLabel">Tu Alformbra</span>
+              <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active">Home</a>
+            <div className="offcanvas-body">
+              <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li className="nav-item">
+                  <NavLink to='/' className={({isActive}) => isActive ? 'nav-link active':'nav-link'}>Home</NavLink>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link">Productos</a>
+                <li className="nav-item">
+                  <NavLink to={`/category/Jet`} className={({isActive}) => isActive ? 'nav-link active':'nav-link'}>Jet</NavLink>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link">Envíos</a>
+                <li className="nav-item">
+                  <NavLink to={`/category/Transito Medio`} className={({isActive}) => isActive ? 'nav-link active':'nav-link'}>Transito Medio</NavLink>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link">Contacto</a>
+                <li className="nav-item">
+                  <NavLink to={`/category/Transito Alto`} className={({isActive}) => isActive ? 'nav-link active':'nav-link'}>Transito Alto</NavLink>
                 </li>
               </ul>
               <CartWidget totalNumber={0} />

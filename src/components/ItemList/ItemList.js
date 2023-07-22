@@ -5,7 +5,6 @@ const ItemList = ({products}) => {
     return(
         <div className='divGaleria'>
             {products.map(prod => <Item key={prod.id}{...prod}/>)}
-            
         </div>
     )
 }

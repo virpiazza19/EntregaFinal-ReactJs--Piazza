@@ -1,11 +1,10 @@
-@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Staatliches&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Staatliches&display=swap";
 
 .Counter {
     display: inline-block;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-top: 20px;
     flex-wrap: wrap;
 }
 
@@ -33,14 +32,14 @@
     background-color: firebrick;
     font-size: 16px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 500;
     align-items: center;
     font-family: "Roboto", sans-serif;
 
     &:hover {
 
         background-color: rgba(45, 43, 43, 0.9215686275);
-        color: black;
+        color: white;
     }
 
     &:disabled {
@@ -60,6 +59,7 @@
     border: 1px solid firebrick;
     border-radius: 5px;
     margin-top: 10px;
+    margin-bottom: 20px;
 
     &:hover {
         background-color: firebrick;
