@@ -1,7 +1,8 @@
+import './CartContainer.css'
 import React from "react";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
-import { createOrder } from "../../firebase";
+import { createOrder } from "../../services/firebase";
 import { useNavigate } from "react-router-dom";
 
 function CartContainer() {

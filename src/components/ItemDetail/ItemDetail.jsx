@@ -1,15 +1,16 @@
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { getProductById } from "../../asyncMock";
+import { getProductById } from "../../services/firebase";
 import { cartContext } from "../../context/cartContext";
 
-const ItemDetail = ({ id, name, price, image, category, stock }) => {
+const ItemDetail = () => {
 
   const [product, setProduct] = useState({});
   const [isAddedToCart, setIsAddedToCart] = useState(false);
 
+  const { id } = useParams();
   const { addToCart, getItemInCart } = useContext(cartContext);
 
   const itemInCart = getItemInCart(id);
@@ -36,13 +37,13 @@ const ItemDetail = ({ id, name, price, image, category, stock }) => {
 
   return (
     <div className="CardItemDetails">
-      <h4 className="CardHeaderDetails">{name}</h4>
-      <img src={image} alt={name} className="fotosProductosDetails" />
+      <h4 className="CardHeaderDetails">{product.name}</h4>
+      <img src={product.image} alt={product.name} className="fotosProductosDetails" />
       <div className="SectionDetails">
-        <p className="InfoDetails">Precio: ${price}</p>
-        <p className="InfoDetails">Categoria: {category}</p>
+        <p className="InfoDetails">Precio: ${product.price}</p>
+        <p className="InfoDetails">Categoria: {product.category}</p>
         <p className="InfoDetails">
-          {!stock ? "Sin Stock Disponible" : `Stock Disponible: ${product.stock}`}
+          {!product.stock ? "Sin Stock Disponible" : `Stock Disponible: ${product.stock}`}
         </p>
       </div>
       {product.stock > 0 ? (
@@ -51,7 +52,7 @@ const ItemDetail = ({ id, name, price, image, category, stock }) => {
         ) : (
             <ItemCount
             initial={1}
-            stock={product.stock}
+            stock={maxItems}
             onConfirm={handleAddToCart}
           />
         )
