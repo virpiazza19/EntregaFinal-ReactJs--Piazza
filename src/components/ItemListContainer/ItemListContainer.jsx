@@ -1,34 +1,42 @@
-import './ItemListContainer.css';
-import React, { useState, useEffect } from 'react';
-import { getProductsByCategory, getProducts } from '../../asyncMock'
-import ItemList from '../ItemList/ItemList'
-import { useParams } from 'react-router-dom';
+import "./ItemListContainer.css";
+import React, { useState, useEffect } from "react";
+import { getProductsByCategory, getProducts } from "../../asyncMock";
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import { Ring } from "@uiball/loaders";
 
 const ItemListContainer = ({ greeting }) => {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [products, setProducts] = useState([])
-
-  const { categoryId } = useParams()
-  const asyncFunc = categoryId ? getProductsByCategory : getProducts
+  const { categoryId } = useParams();
+  const asyncFunc = categoryId ? getProductsByCategory : getProducts;
 
   useEffect(() => {
     asyncFunc(categoryId)
-      .then(response => {
-        setProducts(response)
+      .then((response) => {
+        setProducts(response);
+        setIsLoading(false);
       })
-      .catch(error => {
-        console.error(error)
-      })
-  }, [categoryId])
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [categoryId]);
 
-  return (
-    <main>
-      <div className="divProductos">
-        <h1 className="h1Titulo">{greeting} </h1>
-        <ItemList products={products} />
-      </div>
-    </main>
-  );
+  if (isLoading) {
+    return <Ring size={100} lineWeight={5} speed={1} color="red"/>;
+  } else {
+    return products.length === 0 ? (
+      <p>No hay productos disponibles para esa consulta.</p>
+    ) : (
+      <main>
+        <div className="divProductos">
+          <h1 className="h1Titulo">{greeting} </h1>
+          <ItemList products={products} />
+        </div>
+      </main>
+    );
+  }
 };
 
 export default ItemListContainer;

@@ -8,12 +8,17 @@
     margin: auto;
     border-radius: 5px;
     padding: auto;
-    
+    color: whitesmoke
+}
+
+.cartDiv:hover{
+    color: whitesmoke;
 }
 
 .FontAwesomeIcon{
     margin: 5px;
 }
-span{
+.custom-navlink{
     margin: 5px;
+    text-decoration: none;
 }

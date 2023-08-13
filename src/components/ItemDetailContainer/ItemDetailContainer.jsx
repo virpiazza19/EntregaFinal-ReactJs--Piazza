@@ -1,4 +1,3 @@
-import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
 import { getProductById } from '../../asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
@@ -20,11 +19,14 @@ const ItemDetailContainer = ({ greeting }) => {
             })
     }, [itemId])
 
-    return (
-    <div className='ItemDetailContainer'>
-        <h1 className="h1Titulo">{greeting} </h1>
-        <div className='ItemDetailDiv'><ItemDetail {...product} /></div>
-    </div>)
-}
+  return (
+    <div className="ItemDetailContainer">
+      <h1 className="h1Titulo">{greeting} </h1>
+      <div className="ItemDetailDiv">
+        <ItemDetail {...product} />
+      </div>
+    </div>
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;
