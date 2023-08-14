@@ -9,8 +9,6 @@ import CartItem from "../CartItem/CartItem";
 function CartContainer() {
   const { cart, getTotalItemsInCart, getSubTotal, clearCart } = useContext(cartContext);
   const navigate = useNavigate();
-  //1  Vamos a crear nuestro objeto de orden de compra
-  //! 2 Guardarlo en Firestore
 
   async function handleCheckout() {
     
@@ -37,13 +35,14 @@ function CartContainer() {
   }  
 
   return (
-    <div>
-      <h1>Cart</h1>
-        <CartItem {...cart}/>
-      <br />
-      <button onClick={clearCart()}>Eliminar</button>
-      <div>Total de la compra: ${getSubTotal}</div>
-      <button onClick={handleCheckout}>Comprar</button>
+    <div className="divItems">
+      <h1 className="h1CartTitulo">Tus Productos</h1>
+      <div>
+      <CartItem {...cart}/>
+      </div>
+      <p className="cartInfo">Cant. Items: {getTotalItemsInCart}</p>
+      <p className="cartInfo">Total de la compra: ${getSubTotal}</p>
+      <button className="Option2" onClick={handleCheckout}>COMPRAR</button>
     </div>
   );
 }

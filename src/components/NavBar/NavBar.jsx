@@ -41,7 +41,7 @@ const NavBar = (props) => {
                   <NavLink to={`/category/Transito Alto`} className={({isActive}) => isActive ? 'nav-link active':'nav-link'}>Transito Alto</NavLink>
                 </li>
               </ul>
-              <CartWidget totalNumber={0} />
+              <CartWidget/>
             </div>
           </div>
 

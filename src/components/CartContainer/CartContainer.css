@@ -1,0 +1,27 @@
+.divItems {
+    width: 80%;
+    color: #000000;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.h1CartTitulo{
+    font-family: "Staatliches", cursive;
+    text-align: center;
+    margin: 15% 10% 2% 10%;
+    font-size: 3.5rem;
+    color: white;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    border-bottom: 2px solid black;
+}
+
+.cartInfo {
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Roboto", sans-serif;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
