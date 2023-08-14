@@ -4,28 +4,28 @@ import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 import { createOrder } from "../../services/firebase";
 import { useNavigate } from "react-router-dom";
+import CartItem from "../CartItem/CartItem";
 
 function CartContainer() {
-  const { cart, removeItem } = useContext(cartContext);
+  const { cart, getTotalItemsInCart, getSubTotal, clearCart } = useContext(cartContext);
   const navigate = useNavigate();
   //1  Vamos a crear nuestro objeto de orden de compra
   //! 2 Guardarlo en Firestore
+
   async function handleCheckout() {
-    let totalSum = 0;
-    cart.forEach((item) => {
-      totalSum += item.precio * item.quantity;
-    });
+    
     const orderData = {
       items: cart,
       buyer: { name: "Virginia", email: "vir@mail.com", phone: "123123123" },
       date: new Date(),
-      total: totalSum, // lo sacan del context
+      total: getSubTotal, // lo sacan del context
     };
 
     try {
       const idOrder = await createOrder(orderData);
       console.log(`Gracias por tu compra, tu numero de orden es ${idOrder}`);
       navigate(`/order-confirmation/${idOrder}`);
+      clearCart()
     } catch (error) {
       alert(`No se pudo realizar la compra ${error.message}`);
     }
@@ -34,26 +34,15 @@ function CartContainer() {
     // 1. SweetAlert o Toastify
     // 2. Redirigir al usuario a /order-confirmation/{idOrder}
     // 3. Rendering condicional
-
-    // Luego de la compra: vaciar el carrito
-    // clearCart();
-  }
+  }  
 
   return (
     <div>
       <h1>Cart</h1>
-      {cart.map((item) => (
-        <div key={item}>
-          {console.log(item.id)}
-          <h2>{item.title}</h2>
-          <p>Precio unitario: ${item.price}</p>
-          <p>Cantidad a comprar{item.count}</p>
-          <p>Precio total ${item.count * item.price}</p>
-          <button onClick={() => removeItem(item.id)}>Eliminar</button>
-        </div>
-      ))}
+        <CartItem {...cart}/>
       <br />
-      <div>Total de la compra: $999</div>
+      <button onClick={clearCart()}>Eliminar</button>
+      <div>Total de la compra: ${getSubTotal}</div>
       <button onClick={handleCheckout}>Comprar</button>
     </div>
   );

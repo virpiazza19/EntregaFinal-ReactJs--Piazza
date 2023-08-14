@@ -8,15 +8,14 @@ import { NavLink } from "react-router-dom";
 
 const CartWidget = () => {
   const context = useContext(cartContext);
-
-
   const cartNumber = context.getTotalItemsInCart();
+
   console.log(cartNumber);
   return (
-    <NavLink to="/cart" className="custom-navlink">
+    <NavLink to="/cart" className="custom-navlink" style={{display: cartNumber > 0 ? 'block': 'none'}}>
       <div className="cartDiv">
         <FontAwesomeIcon icon={faCartShopping} />
-        {cartNumber > 0 ? <span> {cartNumber}</span> : <span>0</span>}
+        <span> {cartNumber}</span>
       </div>
     </NavLink>
   );

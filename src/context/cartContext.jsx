@@ -30,17 +30,23 @@ function CartContextProvider(props) {
   }
 
   function clearCart() {
-    return null;
-    // vaciar el carrito
+    return setCart([]);
   }
 
   function getTotalItemsInCart() {
-    // reduce()
     let total = 0;
     cart.forEach((item) => {
       total += item.count;
     });
     return total;
+  }
+
+  function getSubTotal(){
+    let subtotal = 0;
+    cart.forEach((item) => {
+      subtotal += item.product.price*item.count;
+    });
+    return subtotal;
   }
 
   return (
@@ -52,9 +58,10 @@ function CartContextProvider(props) {
         removeItem,
         clearCart,
         getTotalItemsInCart,
+        getSubTotal
       }}
     >
-      {props.children}
+      { props.children }
     </cartContext.Provider>
   );
 }

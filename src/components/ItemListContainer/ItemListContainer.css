@@ -1,20 +1,27 @@
 
   .divProductos {
     color: #000000;
-    margin-top: 100px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-bottom: 20px;
+    padding: auto;
+  
   }
 
   .h1Titulo {
     font-family: "Staatliches", cursive;
     text-align: center;
-    margin: 0% 10%;
+    margin: 15% 10%;
     font-size: 3.5rem;
     color: firebrick;
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     border-bottom: 2px solid black;
+    margin-top: 15%;
+  }
+  
+  .mainProducts{
+    margin: 12% 10%;
   }
 

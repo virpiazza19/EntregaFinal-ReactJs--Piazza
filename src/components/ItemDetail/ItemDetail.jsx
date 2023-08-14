@@ -36,8 +36,6 @@ const ItemDetail = (props) => {
             ? "Sin Stock Disponible"
             : `Stock Disponible: ${props.stock}`}
         </p>
-      </div>
-      <div>
         {props.stock > 0 ? (
           isAddedToCart ? (
             <a className="SectionDetails" href="/cart">

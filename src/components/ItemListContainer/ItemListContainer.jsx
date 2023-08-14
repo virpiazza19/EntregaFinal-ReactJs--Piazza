@@ -27,7 +27,11 @@ const ItemListContainer = ({ greeting }) => {
     return <Ring size={100} lineWeight={5} speed={1} color="red"/>;
   } else {
     return products.length === 0 ? (
-      <p>No hay productos disponibles para esa consulta.</p>
+      <main className="mainProducts"> 
+        <div className="divProductos">
+          <h1 className="h1Titulo">No hay productos disponibles para esa consulta. </h1>
+        </div>
+      </main>
     ) : (
       <main>
         <div className="divProductos">

@@ -51,9 +51,9 @@ async function getProductById(id) {
   }
 }
 
-async function getProductsByCategory() {
+async function getProductsByCategory(categoryId) {
   const productsRef = collection(db, "products");
-  const q = query(productsRef, where("price", ">=", 200));
+  const q = query(productsRef, where("category", "==", categoryId));
   const documentsSnapshot = await getDocs(q);
 
   const documents = documentsSnapshot.docs;

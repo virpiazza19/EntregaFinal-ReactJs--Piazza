@@ -1,0 +1,25 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@800&family=Staatliches&display=swap";
+
+.CartItemDetails{
+    background-color: rgb(220, 152, 152);
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5%;
+    max-width: 70%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    display: flex;
+}
+
+.CartDetails{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: "Roboto", sans-serif;
+}
