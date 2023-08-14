@@ -1,4 +1,4 @@
-import './CartContainer.css'
+import "./CartContainer.css";
 import React from "react";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
@@ -11,11 +11,15 @@ function CartContainer() {
   //1  Vamos a crear nuestro objeto de orden de compra
   //! 2 Guardarlo en Firestore
   async function handleCheckout() {
+    let totalSum = 0;
+    cart.forEach((item) => {
+      totalSum += item.precio * item.quantity;
+    });
     const orderData = {
       items: cart,
-      buyer: { name: "Santiago", email: "santi@mail.com", phone: "123123123" },
+      buyer: { name: "Virginia", email: "vir@mail.com", phone: "123123123" },
       date: new Date(),
-      total: 1500, // lo sacan del context
+      total: totalSum, // lo sacan del context
     };
 
     try {

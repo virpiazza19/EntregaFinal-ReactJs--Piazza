@@ -8,10 +8,10 @@ import { NavLink } from "react-router-dom";
 
 const CartWidget = () => {
   const context = useContext(cartContext);
-  console.log(context);
+
 
   const cartNumber = context.getTotalItemsInCart();
-
+  console.log(cartNumber);
   return (
     <NavLink to="/cart" className="custom-navlink">
       <div className="cartDiv">
