@@ -13,12 +13,13 @@
   .h1Titulo {
     font-family: "Staatliches", cursive;
     text-align: center;
-    margin: 15% 10%;
+    margin: 15% 10% 2% 10%;
     font-size: 3.5rem;
     color: firebrick;
     text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
     border-bottom: 2px solid black;
     margin-top: 15%;
+    padding-top: 5%;
   }
   
   .mainProducts{

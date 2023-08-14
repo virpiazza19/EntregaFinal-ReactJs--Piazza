@@ -183,21 +183,6 @@ async function _exportProducts(){
         "image": "https://drive.google.com/uc?export=view&id=1Qau7AnKmZxxX_zsieUlxJkWCRg-m5S6X"
     }
 ];
-
-  // for ... of
-  // productos.forEach( item => {})
-   /*for(let item of productos){
-    console.log(item)
-    const docRef = doc(db, "products", String(item.id))
-    const docCreated = await setDoc(docRef, item);
-    console.log("Doc created with id:", docCreated.id)
-  } 
-
-  for(let item of productos){   
-    const collectionRef = collection(db, "products")
-    const docCreated = await addDoc(collectionRef, item);
-    console.log("Doc created with id:", docCreated.id)
-  }*/
 }
 
 

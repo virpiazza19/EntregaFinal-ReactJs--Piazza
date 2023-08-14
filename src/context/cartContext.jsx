@@ -44,7 +44,7 @@ function CartContextProvider(props) {
   function getSubTotal(){
     let subtotal = 0;
     cart.forEach((item) => {
-      subtotal += item.product.price*item.count;
+      subtotal += item.price*item.count;
     });
     return subtotal;
   }

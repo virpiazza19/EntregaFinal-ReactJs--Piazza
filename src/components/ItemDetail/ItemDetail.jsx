@@ -38,9 +38,9 @@ const ItemDetail = (props) => {
         </p>
         {props.stock > 0 ? (
           isAddedToCart ? (
-            <a className="SectionDetails" href="/cart">
+            <NavLink className="SectionDetails" to="/cart">
               Ir al carrito
-            </a>
+            </NavLink>
           ) : (
             <ItemCount stock={maxItems} onConfirm={handleAddToCart} />
           )

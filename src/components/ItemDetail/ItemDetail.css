@@ -3,7 +3,6 @@
 
 .CardHeaderDetails {
     font-family: "Roboto", sans-serif;
-    margin-top: 10px;
     font-size: 1.2rem;
     color: white;
     background-color: rgba(45, 43, 43, 0.9215686275);
@@ -11,7 +10,7 @@
     height: 50px;
     padding: auto;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 2%;
     justify-content: center;
 }
 
@@ -40,7 +39,7 @@
 .CardItemDetails {
     background-color: rgb(220, 152, 152);
     border: 2px solid black;
-    margin-top: 5x;
+    margin-top: 2%;
     margin-bottom: 20px;
     padding: 5%;
     max-width: 70%;
@@ -52,7 +51,7 @@
 }
 
 .Option2{
-    width: 100px;
+    width: auto;
     height: 30px;
     padding: 5px;
     color: rgba(45, 43, 43, 0.9215686275);
@@ -83,10 +82,12 @@
     &:disabled {
         color: black;
         background-color: rgba(45, 43, 43, 0.9215686275);
+        text-shadow: none;
     }
 
     &:disabled:hover {
         background-color: rgba(45, 43, 43, 0.9215686275);
         color: black;
+        text-shadow: none;
     }
 }

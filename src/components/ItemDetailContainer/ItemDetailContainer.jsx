@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { getProductById } from "../../services/firebase"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = ({ greeting }) => {
 
@@ -21,7 +22,7 @@ const ItemDetailContainer = ({ greeting }) => {
 
   return (
     <div className="ItemDetailContainer">
-      <h1 className="h1Titulo">{greeting} </h1>
+      <h1 className="h1DetailsTitulo">{greeting} </h1>
       <div className="ItemDetailDiv">
         <ItemDetail {...product} />
       </div>

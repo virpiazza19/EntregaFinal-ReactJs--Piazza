@@ -10,7 +10,6 @@ const CartWidget = () => {
   const context = useContext(cartContext);
   const cartNumber = context.getTotalItemsInCart();
 
-  console.log(cartNumber);
   return (
     <NavLink to="/cart" className="custom-navlink" style={{display: cartNumber > 0 ? 'block': 'none'}}>
       <div className="cartDiv">

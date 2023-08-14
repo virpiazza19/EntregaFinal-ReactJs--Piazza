@@ -14,3 +14,13 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+.h1DetailsTitulo{
+    font-family: "Staatliches", cursive;
+    text-align: center;
+    margin: 2% 10% 2% 10%;
+    font-size: 3.5rem;
+    color: firebrick;
+    text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+    border-bottom: 2px solid black;
+}
