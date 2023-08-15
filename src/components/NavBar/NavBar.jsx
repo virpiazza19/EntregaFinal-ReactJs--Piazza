@@ -40,6 +40,9 @@ const NavBar = () => {
                 <li className="nav-item">
                   <NavLink to={`/category/Transito Alto`} className={({isActive}) => isActive ? 'nav-link active':'nav-link'}>Transito Alto</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to={`/comprobante`} className={({isActive}) => isActive ? 'nav-link active':'nav-link'}>Compras</NavLink>
+                </li>
               </ul>
               <CartWidget/>
             </div>

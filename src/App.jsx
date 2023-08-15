@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar/NavBar";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import CartContainer from "./components/CartContainer/CartContainer";
 import { CartContextProvider } from "./context/cartContext";
+import Checkout from "./components/Checkout/Checkout";
+import Comprobante from "./components/Comprobante/Comprobante";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
               element={<ItemDetailContainer greeting={"Tu Alfombra"} />}
             />
             <Route path="/cart" element={<CartContainer />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/comprobante" element={<Comprobante />} />
             <Route path="*" element={<h1>404 NOT FOUNT</h1>} />
           </Routes>
         </BrowserRouter>

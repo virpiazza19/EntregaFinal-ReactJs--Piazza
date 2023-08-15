@@ -2,39 +2,13 @@ import "./CartContainer.css";
 import React from "react";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
-import { createOrder } from "../../services/firebase";
-import { useNavigate } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
+import { NavLink } from "react-router-dom";
 
 function CartContainer() {
-  const { cart, getTotalItemsInCart, getSubTotal, clearCart } =
-    useContext(cartContext);
-  const navigate = useNavigate();
+  const { cart, getTotalItemsInCart, getSubTotal } = useContext(cartContext);
 
   const subTotal = getSubTotal();
-
-  async function handleCheckout() {
-    const orderData = {
-      items: cart,
-      buyer: { name: "Virginia", email: "vir@mail.com", phone: "123123123" },
-      date: new Date(),
-      total: subTotal,
-    };
-
-    try {
-      const idOrder = await createOrder(orderData);
-      console.log(`Gracias por tu compra, tu numero de orden es ${idOrder}`);
-      navigate(`/order-confirmation/${idOrder}`);
-      clearCart();
-    } catch (error) {
-      alert(`No se pudo realizar la compra ${error.message}`);
-    }
-
-    // 0: NO hagan alert ni lo muestren por consola
-    // 1. SweetAlert o Toastify
-    // 2. Redirigir al usuario a /order-confirmation/{idOrder}
-    // 3. Rendering condicional
-  }
 
   return (
     <div className="divItems">
@@ -48,13 +22,13 @@ function CartContainer() {
         <p className="cartInfo">Cant. Items: {getTotalItemsInCart()}</p>
         <p className="cartInfo">Total de la compra: ${subTotal}</p>
         {subTotal === 0 ? (
-          <button className="Option2" onClick={handleCheckout} disabled>
-            COMPRAR
-          </button>
+          <NavLink className="Option2" to="/">
+            Volver al home
+          </NavLink>
         ) : (
-          <button className="Option2" onClick={handleCheckout}>
+          <NavLink className="Option2" to="/checkout">
             COMPRAR
-          </button>
+          </NavLink>
         )}
       </div>
     </div>

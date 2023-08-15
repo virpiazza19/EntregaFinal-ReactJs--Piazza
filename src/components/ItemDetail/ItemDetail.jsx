@@ -14,7 +14,6 @@ const ItemDetail = (props) => {
   const maxItems = itemInCart ? props.stock - itemInCart.count : props.stock;
 
   function handleAddToCart(quantity) {
-    console.log(props, quantity);
     addToCart(props, quantity);
     alert(`Producto agregado al carrito, cantidad: ${quantity}`);
     setIsAddedToCart(true);
