@@ -48,9 +48,7 @@ const Comprobante = () => {
           </div>
           <div className="parrafosCart">
             <p className="cartInfo">Cant. Items: {unidadesPorCompre}</p>
-            <p className="cartInfo">Total de la compra: ${totalCompra}</p>
-            <p className="cartInfo">Usuario: {compra.buyer.name}</p>
-            <p className="cartInfo">Email: {compra.buyer.email}</p>
+            <p className="cartInfo">Total de la compra: ${totalCompra}</p>    
             <p className="cartInfo">Fecha de compra: {fechaDeCompra}</p>
             <NavLink className="Option2" to="/">
               Volver al home
