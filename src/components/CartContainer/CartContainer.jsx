@@ -10,17 +10,15 @@ function CartContainer() {
   const { cart, getTotalItemsInCart, getSubTotal, clearCart } =
     useContext(cartContext);
   const navigate = useNavigate();
+
   const subTotal = getSubTotal();
 
-  console.log(cart);
-  console.log(getTotalItemsInCart);
-  console.log(getSubTotal);
   async function handleCheckout() {
     const orderData = {
       items: cart,
       buyer: { name: "Virginia", email: "vir@mail.com", phone: "123123123" },
       date: new Date(),
-      total: getSubTotal,
+      total: subTotal,
     };
 
     try {
@@ -46,17 +44,19 @@ function CartContainer() {
           <CartItem {...item} />
         ))}
       </div>
-      <p className="cartInfo">Cant. Items: {getTotalItemsInCart()}</p>
-      <p className="cartInfo">Total de la compra: ${subTotal}</p>
-      {subTotal === 0 ? (
-        <button className="Option2" onClick={handleCheckout} disabled>
-          COMPRAR
-        </button>
-      ) : (
-        <button className="Option2" onClick={handleCheckout}>
-          COMPRAR
-        </button>
-      )}
+      <div className="parrafosCart">
+        <p className="cartInfo">Cant. Items: {getTotalItemsInCart()}</p>
+        <p className="cartInfo">Total de la compra: ${subTotal}</p>
+        {subTotal === 0 ? (
+          <button className="Option2" onClick={handleCheckout} disabled>
+            COMPRAR
+          </button>
+        ) : (
+          <button className="Option2" onClick={handleCheckout}>
+            COMPRAR
+          </button>
+        )}
+      </div>
     </div>
   );
 }

@@ -7,11 +7,18 @@ const CartItem = (props) => {
 
   return (
     <div className="CartItemDetails">
-      <p className="CartDetails">Producto: {props.name}</p>
+      <img
+        src={props.image}
+        alt={props.name}
+        className="CartDetails fotosProductosCartDetails"
+      />
+      <p className="CartDetails">{props.name}</p>
       <p className="CartDetails">Categoria: {props.category}</p>
       <p className="CartDetails">Precio por unidad: ${props.price}</p>
       <p className="CartDetails">Subtotal: ${props.count * props.price}</p>
-      <button className="CartButton" onClick={() => removeItem(props.id)}>Eliminar</button>
+      <button className="CartButton" onClick={() => removeItem(props.id)}>
+        Eliminar
+      </button>
     </div>
   );
 };

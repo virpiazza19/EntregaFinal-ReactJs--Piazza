@@ -1,4 +1,3 @@
-// Firebase
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -10,7 +9,7 @@ import {
   query,
   addDoc,
   setDoc,
-  writeBatch
+  writeBatch,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -20,9 +19,8 @@ const firebaseConfig = {
   storageBucket: "entregafinal-piazza.appspot.com",
   messagingSenderId: "613028206186",
   appId: "1:613028206186:web:01e1d7ce2dde69b038dc13",
-  measurementId: "G-GCEKCESDG5"
+  measurementId: "G-GCEKCESDG5",
 };
-
 
 const appFirebase = initializeApp(firebaseConfig);
 
@@ -32,11 +30,9 @@ async function getProducts() {
   const productsRef = collection(db, "products");
   const documentsSnapshot = await getDocs(productsRef);
   const documents = documentsSnapshot.docs;
-  const docsData = documents.map(
-    (item) => {
-      return { ...item.data(), id: item.id };
-    }
-  );
+  const docsData = documents.map((item) => {
+    return { ...item.data(), id: item.id };
+  });
   return docsData;
 }
 
@@ -61,21 +57,20 @@ async function getProductsByCategory(categoryId) {
   return documents.map((item) => ({ ...item.data(), id: item.id }));
 }
 
-async function createOrder(orderData){
-  const collectionRef = collection(db, "orders")
-  const docCreated = await addDoc(collectionRef, orderData)
+async function createOrder(orderData) {
+  const collectionRef = collection(db, "orders");
+  const docCreated = await addDoc(collectionRef, orderData);
 
-  return(docCreated.id)
+  return docCreated.id;
 }
 
-
-async function getOrder(id){
+async function getOrder(id) {
   const docRef = doc(db, "orders", id);
   const docSnapshot = await getDoc(docRef);
 
   return { ...docSnapshot.data(), id: docSnapshot.id };
 }
-
+/*
 async function _exportProducts(){
   const productos = [
     {
@@ -184,7 +179,6 @@ async function _exportProducts(){
     }
 ];
 }
-
 
 async function _exportProductsWithBatch(){
   const productos = [
@@ -308,3 +302,12 @@ async function _exportProductsWithBatch(){
 }
 
 export { getProducts, getOrder, getProductById, getProductsByCategory, createOrder, _exportProducts, _exportProductsWithBatch};
+*/
+
+export {
+  getProducts,
+  getOrder,
+  getProductById,
+  getProductsByCategory,
+  createOrder,
+};

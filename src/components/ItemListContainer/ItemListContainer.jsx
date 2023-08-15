@@ -24,12 +24,14 @@ const ItemListContainer = ({ greeting }) => {
   }, [categoryId]);
 
   if (isLoading) {
-    return <Ring size={100} lineWeight={5} speed={1} color="red"/>;
+    return <Ring size={100} lineWeight={5} speed={1} color="red" />;
   } else {
     return products.length === 0 ? (
-      <main className="mainProducts"> 
+      <main>
         <div className="divProductos">
-          <h1 className="h1Titulo">No hay productos disponibles para esa consulta. </h1>
+          <h1 className="h1Titulo">
+            No hay productos disponibles para esa consulta.{" "}
+          </h1>
         </div>
       </main>
     ) : (

@@ -4,7 +4,7 @@ import logo from './assets/logoPagina.png'
 import CartWidget from '../CartWidget/CartWidget'
 import { NavLink, Link } from 'react-router-dom';
 
-const NavBar = (props) => {
+const NavBar = () => {
   return (
     <header>
       <nav className="navbar bg-body-tertiary navbar-expand-lg fixed-top background-color navbar-dark bg-dark"
