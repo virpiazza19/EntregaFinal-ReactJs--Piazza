@@ -6,96 +6,14 @@
 	align-items: center;
 	color: whitesmoke;
 	text-align: center;
-
-	h1 {
-		width: 80%;
-		text-align: center;
-        padding-top: 0;
-        margin-top: 0;
-	}
-
-	p {
-		width: 80%;
-		text-align: center;
-		font-size: 1.2rem;
-	}
-}
-
-.formDiv {
-	background-color: rgb(31, 30, 30);
-	border: 2px solid white;
-	padding: 40px;
-	margin-top: 15px;
-	width: 80%;
-	max-width: 600px;
-	min-width: 300px;
-	text-align: left;
-    border: 2px solid black;
-}
-
-.formFonts {
-	font-family: 'Roboto', sans-serif;
-	color: whitesmoke;
-}
-
-#message {
-	max-width: 500px;
-	max-height: 200px;
-	min-height: 200px;
-	padding: 5px;
-	margin-top: 5px;
-	background-color: #2d2b2b;
-	border: 1px solid rgb(246, 207, 207);
-	color: whitesmoke;
-
-	&:focus{
-		color: white;
-		border: 1px solid firebrick;
-		background-color: #2d2b2b;
-		box-shadow: none;
-	}
-}
-
-form {
-	&::placeholder {
-		color: rgb(246, 207, 207);
-		opacity: 1;
-	}
 }
 
 input {
 	height: 30px;
 	padding: 2px 5px 2px 5px;
-	margin-top: 5px;
+	font-size: 12px;
 	background-color: #2d2b2b;
 	border: 1px solid rgb(246, 207, 207);
 	color: whitesmoke;
 	max-width: 500px;
-}
-
-.form-control {
-	height: 30px;
-	padding: 2px 5px 2px 5px;
-	margin-top: 5px;
-	background-color: #2d2b2b;
-	border: 1px solid rgb(246, 207, 207);
-	color: whitesmoke;
-	max-width: 500px;
-
-	&:focus{
-		color: white;
-		border: 1px solid firebrick;
-		background-color: #2d2b2b;
-		box-shadow: none;
-	}
-
-	&::placeholder {
-		color: rgb(246, 207, 207);
-		opacity: 1;
-	}
-}
-
-.mb-3{
-    justify-content:space-between;
-    display: flex;
 }

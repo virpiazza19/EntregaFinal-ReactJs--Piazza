@@ -8,18 +8,18 @@ const Comprobante = () => {
   const [compra, setCompra] = useState();
   const [unidadesPorCompre, setUnidadesPorCompre] = useState();
   const [totalCompra, setTotalCompra] = useState();
-  const [fechaDeCompra, setFecha] = useState()
+  const [fechaDeCompra, setFecha] = useState();
 
   async function recibirInfo() {
-    const orden = await getOrder(orderId)
+    const orden = await getOrder(orderId);
     setCompra(orden);
     let totalCalcular = orden.total;
     let unidades = 0;
-    const fechaACalcular = orden.date.toDate()
+    const fechaACalcular = orden.date.toDate();
     orden.items.forEach((item) => {
       unidades += item.count;
     });
-    setFecha(fechaACalcular.toLocaleString())
+    setFecha(fechaACalcular.toLocaleString());
     setTotalCompra(totalCalcular);
     setUnidadesPorCompre(unidades);
   }
@@ -28,7 +28,7 @@ const Comprobante = () => {
     {
       return (
         <div className="divItems">
-          <h1 className="h1CartTitulo">Compra {orderId}</h1>
+          <h1 className="h1CartTitulo compraInfo">Compra {orderId}</h1>
           <div>
             {compra.items.map((item) => (
               <div className="CartItemDetails">
@@ -62,33 +62,26 @@ const Comprobante = () => {
   }
 
   return (
-    <main>
-      <div classname="divContacto">
-        <h1 className="h1DetailsTitulo">Buscar compras</h1>
-        <form classname="formDiv" id="formMensajes">
-          <div classname="mb-3">
-            <label for="name" classname="form-label formFonts">
-              Número de comprobante
-            </label>
-            <input
-              type="text"
-              name="nombre"
-              classname="form-control"
-              placeholder="Ingrese su nombre"
-              id="name"
-              value={orderId}
-              onChange={({ target }) => setIdOrder(target.value)}
-              required
-            />
-          </div>
-        </form>
-        <div>
-          <button className="Option2" onClick={recibirInfo}>
-            Buscar
-          </button>
-        </div>
+    <div classname="divCompra">
+      <h1 className="h1CompraTitulo">Buscar compras</h1>
+      <div classname="inputcompra">
+        <p className="cartInfo">Número de comprobante</p>
+        <input
+          type="text"
+          name="nombre"
+          classname="form-control"
+          placeholder="comprobante"
+          value={orderId}
+          onChange={({ target }) => setIdOrder(target.value)}
+          required
+        ></input>
       </div>
-    </main>
+      <div>
+        <button className="Option2" onClick={recibirInfo}>
+          Buscar
+        </button>
+      </div>
+    </div>
   );
 };
 

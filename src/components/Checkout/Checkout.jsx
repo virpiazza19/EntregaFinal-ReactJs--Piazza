@@ -29,7 +29,6 @@ const Checkout = () => {
     clearCart();
 
     // 1. SweetAlert o Toastify
-
   }
 
   if (isLoading) {
@@ -55,53 +54,48 @@ const Checkout = () => {
     <main>
       <div classname="divContacto">
         <h1 className="h1Titulo">Checkout</h1>
-        <form classname="formDiv" id="formMensajes">
-          <div classname="mb-3">
-            <label for="name" classname="form-label formFonts">
-              Nombre y Apellido
-            </label>
-            <input
-              type="text"
-              name="nombre"
-              classname="form-control"
-              placeholder="Ingrese su nombre"
-              id="name"
-              value={nameForm}
-              onChange={({ target }) => setNameForm(target.value)}
-              required
-            />
-          </div>
-          <div classname="mb-3">
-            <label for="email" classname="form-label formFonts">
-              Mail
-            </label>
-            <input
-              type="email"
-              name="mail"
-              classname="form-control"
-              placeholder="Ingrese su email"
-              id="email"
-              value={emailForm}
-              onChange={({ target }) => setEmailForm(target.value)}
-              required
-            />
-          </div>
-          <div classname="mb-3">
-            <label for="phone" classname="form-label formFonts">
-              Teléfono
-            </label>
-            <input
-              type="tel"
-              name="telefono"
-              classname="form-control"
-              placeholder="Ingrese su teléfono con código de área"
-              id="phone"
-              value={phoneForm}
-              onChange={({ target }) => setPhoneForm(target.value)}
-              required
-            />
-          </div>
-        </form>
+        <div classname="inputcompra">
+          <p classname="cartInfo">
+            Nombre y Apellido
+          </p>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Ingrese su nombre"
+            id="name"
+            value={nameForm}
+            onChange={({ target }) => setNameForm(target.value)}
+            required
+          />
+        </div>
+        <div classname="inputcompra">
+          <p classname="cartInfo">
+            Mail
+          </p>
+          <input
+            type="email"
+            name="mail"
+            placeholder="Ingrese su email"
+            id="email"
+            value={emailForm}
+            onChange={({ target }) => setEmailForm(target.value)}
+            required
+          />
+        </div>
+        <div classname="inputcompra">
+          <p classname="cartInfo">
+            Teléfono
+          </p>
+          <input
+            type="tel"
+            name="telefono"
+            placeholder="Ingrese su teléfono"
+            id="phone"
+            value={phoneForm}
+            onChange={({ target }) => setPhoneForm(target.value)}
+            required
+          />
+        </div>
         <div>
           <button className="Option2" onClick={handleCheckout}>
             CONFIRMAR COMPRA

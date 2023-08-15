@@ -3,6 +3,8 @@ import "./ItemDetail.css";
 import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { cartContext } from "../../context/cartContext";
+import Swal from 'sweetalert2';
+
 
 const ItemDetail = (props) => {
   const [isAddedToCart, setIsAddedToCart] = useState(false);
@@ -15,7 +17,17 @@ const ItemDetail = (props) => {
 
   function handleAddToCart(quantity) {
     addToCart(props, quantity);
-    alert(`Producto agregado al carrito, cantidad: ${quantity}`);
+    Swal.fire({
+      background: '#b22222',    
+      border: `2px solid #F5F5F5`,
+      iconColor: '#FFFFFF',
+      color: '#FFFFFF',
+      confirmButtonColor: '#2d2b2beb',
+      title: "Producto agregado!",
+      text: `Agregaste Tapete ${props.name}`,
+      icon: "success",
+      button: "Aww yiss!",
+    });
     setIsAddedToCart(true);
   }
 
@@ -37,7 +49,7 @@ const ItemDetail = (props) => {
         </p>
         {props.stock > 0 ? (
           isAddedToCart ? (
-            <NavLink className="SectionDetails" to="/cart">
+            <NavLink className="navlink" to="/cart">
               Ir al carrito
             </NavLink>
           ) : (
