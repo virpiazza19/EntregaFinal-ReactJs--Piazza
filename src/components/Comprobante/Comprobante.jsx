@@ -8,16 +8,18 @@ const Comprobante = () => {
   const [compra, setCompra] = useState();
   const [unidadesPorCompre, setUnidadesPorCompre] = useState();
   const [totalCompra, setTotalCompra] = useState();
+  const [fechaDeCompra, setFecha] = useState()
 
   async function recibirInfo() {
     const orden = await getOrder(orderId)
     setCompra(orden);
-    let totalCalcular = 0;
+    let totalCalcular = orden.total;
     let unidades = 0;
+    const fechaACalcular = orden.date.toDate()
     orden.items.forEach((item) => {
-      totalCalcular += item.count * item.price;
       unidades += item.count;
     });
+    setFecha(fechaACalcular.toLocaleString())
     setTotalCompra(totalCalcular);
     setUnidadesPorCompre(unidades);
   }
@@ -47,6 +49,9 @@ const Comprobante = () => {
           <div className="parrafosCart">
             <p className="cartInfo">Cant. Items: {unidadesPorCompre}</p>
             <p className="cartInfo">Total de la compra: ${totalCompra}</p>
+            <p className="cartInfo">Usuario: {compra.buyer.name}</p>
+            <p className="cartInfo">Email: {compra.buyer.email}</p>
+            <p className="cartInfo">Fecha de compra: {fechaDeCompra}</p>
             <NavLink className="Option2" to="/">
               Volver al home
             </NavLink>
